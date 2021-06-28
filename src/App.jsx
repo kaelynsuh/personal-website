@@ -78,6 +78,7 @@ const theme = createMuiTheme({
   },
   typography: {
     fontFamily: 'Raleway, Arial',
+    fontSize: 16,
     // h6: {
     //   fontSize: '5rem',
     //   fontFamily: 'Indie Flower',

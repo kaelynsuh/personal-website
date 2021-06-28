@@ -6,8 +6,13 @@ import {
   AppBar,
   Button,
   Container,
+  Drawer,
   IconButton,
   Link,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   Tabs,
   Toolbar,
   Typography,
@@ -26,6 +31,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 
 // import { useTheme } from '@material-ui/core/styles';
 
@@ -128,6 +134,24 @@ const StyledLink = styled(Link)`
   color: #000000;
 `;
 
+const StyledMenu = styled(Button)`
+  /* display: block; */
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: 404px) {
+    display: none;
+  }
+`;
+
+const StyledMenuItems = styled(Button)`
+  display: none;
+
+  @media screen and (min-width: 404px) {
+    display: block;
+  }
+`;
+
 // About Me
 const AboutMe = styled.div`
   display: flex;
@@ -146,7 +170,7 @@ const WorkExperience = styled.div`
   text-align: center;
 
   margin: 0 2rem;
-  padding: 5rem 10rem;
+  padding: 5rem 6rem;
 `;
 
 // Skills
@@ -234,9 +258,7 @@ const SubHeading = styled.div`
 
 const Home = () => {
   // const theme = useTheme();
-  // const [isShown, setIsShown] = useState(false);
-  const [isShown, setIsShown] = useState({});
-  // console.log('isShown: ', isShown);
+  const [showMenu, setShowMenu] = useState(false);
 
   const scrollToTop = () => {
     window.scroll({
@@ -261,20 +283,46 @@ const Home = () => {
       </SideNav>
 
       <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <Logo src={logo} alt="logo" />
-          </IconButton>
+        <StyledContainer maxWidth="md">
+          <Toolbar>
+            <StyledMenu onClick={() => setShowMenu(true)}>
+              <MenuIcon />
+            </StyledMenu>
+            <Drawer
+              anchor="top"
+              open={showMenu}
+              onClose={() => setShowMenu(false)}
+            >
+              <List>
+                <ListItem button onClick={() => setShowMenu(false)}>
+                  <CloseIcon />
+                </ListItem>
+                <ListItem button>
+                  <ListItemText primary="Home" />
+                </ListItem>
+                <ListItem button>
+                  <ListItemText primary="Portfolio" />
+                </ListItem>
+              </List>
+            </Drawer>
 
-          <Button color="inherit" href="/">
-            Home
-          </Button>
-          <Button color="inherit" href="/portfolio">
-            Portfolio
-          </Button>
-        </Toolbar>
+            {/* revisit: padding's circular, maybe change this to Button instead */}
+            <IconButton edge="start" color="inherit" aria-label="menu" href="/">
+              <Logo src={logo} alt="logo" />
+            </IconButton>
+
+            <StyledMenuItems color="inherit" href="/">
+              Home
+            </StyledMenuItems>
+            <StyledMenuItems color="inherit" href="/portfolio">
+              Portfolio
+            </StyledMenuItems>
+          </Toolbar>
+        </StyledContainer>
       </AppBar>
 
+      {/* revisit: wrap profile in container */}
+      {/* <StyledContainer maxWidth="md"> */}
       <Profile>
         <ProfileInfo>
           <Name>Kaelyn Suh</Name>
@@ -454,9 +502,9 @@ const Home = () => {
         <Footer>
           <StyledArrowBackIosIcon onClick={scrollToTop} />
           <MadeWith>
-            <div>Made with&nbsp;</div>
+            {/* <div>Made with&nbsp;</div>
             <FavoriteIcon style={{ fontSize: '1.2rem' }} />
-            <div>&nbsp;using React and Material UI</div>
+            <div>&nbsp;using React and Material UI</div> */}
           </MadeWith>
           <div>© 2021 Kaelyn Suh</div>
         </Footer>
