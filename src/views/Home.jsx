@@ -103,6 +103,10 @@ const Logo = styled.img`
   /* opacity: 0.6; */
 `;
 
+const P = styled.p`
+  text-align: justify;
+`;
+
 const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
   cursor: pointer;
   transform: rotate(90deg);
@@ -283,8 +287,8 @@ const Home = () => {
       </SideNav>
 
       <AppBar position="static">
-        <StyledContainer maxWidth="md">
-          <Toolbar>
+        <StyledContainer maxWidth="md" style={{ padding: 0 }}>
+          <Toolbar style={{ padding: 0 }}>
             <StyledMenu onClick={() => setShowMenu(true)}>
               <MenuIcon />
             </StyledMenu>
@@ -307,9 +311,9 @@ const Home = () => {
             </Drawer>
 
             {/* revisit: padding's circular, maybe change this to Button instead */}
-            <IconButton edge="start" color="inherit" aria-label="menu" href="/">
+            <Button edge="start" color="inherit" aria-label="menu" href="/">
               <Logo src={logo} alt="logo" />
-            </IconButton>
+            </Button>
 
             <StyledMenuItems color="inherit" href="/">
               Home
@@ -335,29 +339,24 @@ const Home = () => {
         <AboutMe id="about-me">
           <SectionTitle>About Me</SectionTitle>
           {/* <Typography variant="h6">About Me</Typography> */}
-          <div>
+          <P>
             Hi! My name is Kaelyn. I&apos;m a Software Developer based in
             Toronto. I am passionate about building beautiful interfaces and
             making the web accessible for all.
-          </div>
+          </P>
 
-          <br />
-
-          <div>
+          <P>
             Currently I am working at Uplift making travel accessible and
             affordable for everyone. Previously I worked at Ample Organics
             making medical cannabis safely accessible to those in need, and
             prior to that I was at E-Data Now making quality assurance compliant
             in the automotive space.
-          </div>
+          </P>
 
-          <br />
-
-          <div>
+          <P>
             When I am not coding I enjoy streaming video games on twitch,
             attempting art and yoga.
-          </div>
-          <br />
+          </P>
 
           {/* <div>and here. more about me here</div> */}
         </AboutMe>
@@ -367,67 +366,60 @@ const Home = () => {
 
           <Date>Oct 2019 - Present</Date>
           <SubHeading>Software Engineer - Uplift Inc.</SubHeading>
-          <br />
-          <div>
+          <P>
             Ownership of the Borrower&apos;s Portal, where consumers can service
             and manage their loans. It was re-platformed from Clojure to React
             and Redux. Other projects on the platform include scheduling
             payments, down payments, beyond travel functionality, FAQ&apos;s and
             search capability.
-          </div>
+          </P>
 
-          <br />
-
-          <div>
+          <P>
             Also built the CCPA (California Consumer Privacy Act) Portal where
             users can opt out of data sharing, written in React, Typescript,
             GraphQL and Apollo.
-          </div>
+          </P>
 
-          <br />
           <br />
           <br />
 
           <Date>Sept 2018 - Oct 2019</Date>
           <SubHeading>Software Developer - Ample Organics</SubHeading>
-          <br />
-          <div>
+          <P>
             Worked on a B2B platform providing a &quot;Seed-to-Sale&quot;
             ecosystem for cannabis businesses. The portal allowed tracking and
             reporting plant growth as well as medical and recreational sales.
             Some technologies used include Vue, Vuex, Ruby on Rails, PostgreSQL,
             Docker, Kubernetes and AWS technologies.
-          </div>
+          </P>
 
-          <br />
           <br />
           <br />
 
           <Date>May 2017 - Sept 2018</Date>
           <SubHeading>Software Developer - E-Data Now</SubHeading>
-          <br />
-          <div>
+          <P>
             Worked on a Web app to allow users to manage and track production
             and manufacturing processes. Also managed the support portal where
             users can submit and manage requests. Some technologies used include
             Vue, Vuex, Ruby on Rails, PostreSQL, Docker and AWS technologies.
-          </div>
+          </P>
         </WorkExperience>
 
         <Skills id="skills">
           <SectionTitle>Skills</SectionTitle>
 
           <SubHeading>Technologies</SubHeading>
-          <br />
-          <div>
+          <p>
             React JS, Redux, Ruby on Rails, Vue JS, AWS, PostgreSQL, Docker, Git
-          </div>
+          </p>
+
           <br />
           <br />
 
           <SubHeading>Languages</SubHeading>
-          <br />
-          <div>Javascript, Typescript, HTML & CSS, Ruby, Python, Java, SQL</div>
+          <p>Javascript, Typescript, HTML & CSS, Ruby, Python, Java, SQL</p>
+
           <br />
           <br />
         </Skills>
@@ -441,12 +433,10 @@ const Home = () => {
             {/* Queen&apos;s University - Bachelor of Computing, Computer Science */}
           </SubHeading>
           <br />
-          <div>
-            Recipient of the Queen&apos;s University Excellence Scholarship
-          </div>
-          <div>
+          <p>Recipient of the Queen&apos;s University Excellence Scholarship</p>
+          <p>
             Activities and Societies: Queen&apos;s Dance Club, Flow Dance Club
-          </div>
+          </p>
         </Education>
 
         <Portfolio>
