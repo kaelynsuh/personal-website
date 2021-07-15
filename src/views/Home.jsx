@@ -35,8 +35,10 @@ import CloseIcon from '@material-ui/icons/Close';
 
 // import { useTheme } from '@material-ui/core/styles';
 
-import kae from '../lib/assets/images/kae.jpg';
 import logo from '../lib/assets/images/logo.png';
+
+// import kae from '../lib/assets/images/kae.jpg';
+import kae2 from '../lib/assets/images/kae2.jpeg';
 
 import SideNavItems from './SideNavItems';
 
@@ -61,7 +63,7 @@ const ProfileInfo = styled.div`
 `;
 
 const Name = styled.div`
-  background-color: #fff;
+  /* background-color: #fff; */
   /* background-color: #f2d9cd; */
 
   /* background-color: #e2c1bd; */
@@ -75,7 +77,7 @@ const Name = styled.div`
 `;
 
 const Title = styled.div`
-  background-color: #fff;
+  /* background-color: #fff; */
   /* background-color: #f2d9cd; */
 
   /* background-color: #e2c1bd; */
@@ -149,6 +151,8 @@ const StyledMenu = styled(Button)`
 `;
 
 const StyledMenuItems = styled(Button)`
+  text-transform: capitalize;
+
   display: none;
 
   @media screen and (min-width: 404px) {
@@ -332,7 +336,7 @@ const Home = () => {
           <Name>Kaelyn Suh</Name>
           <Title>Software Developer</Title>
         </ProfileInfo>
-        <ProfilePhoto src={kae} alt="Profile Photo" />
+        <ProfilePhoto src={kae2} alt="Profile Photo" />
       </Profile>
 
       <StyledContainer maxWidth="md">
