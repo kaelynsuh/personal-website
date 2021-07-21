@@ -1,8 +1,12 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-debugger */
 import React from 'react';
 import styled from 'styled-components';
 import { Button, Container, Link } from '@material-ui/core';
 import { Link as ReactRouterLink } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitch } from '@fortawesome/free-brands-svg-icons';
 
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -156,6 +160,11 @@ const ContactMe = styled.div`
 
   margin: 9rem 9rem 2rem 9rem;
   padding: 5rem 2rem;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 // Footer
@@ -340,7 +349,7 @@ const Home = () => {
           </StyledLink>
           <br />
           {/* github, StyledLinkedin, twitter, insta, twitch */}
-          <div>
+          <Icons>
             <StyledLink
               href="https://github.com/kaelynsuh"
               target="_blank"
@@ -369,7 +378,14 @@ const Home = () => {
             >
               <TwitterIcon />
             </StyledLink>
-          </div>
+            <StyledLink
+              href="https://www.twitch.tv/kae_tv"
+              target="_blank"
+              rel="noopener"
+            >
+              <FontAwesomeIcon icon={faTwitch} style={{ fontSize: '1.6rem' }} />
+            </StyledLink>
+          </Icons>
         </ContactMe>
       </StyledContainer>
 
