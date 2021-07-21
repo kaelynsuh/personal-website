@@ -29,6 +29,10 @@ const StyledContainer = styled(Container)`
   background: linear-gradient(#ffeae0, #ffeae0) no-repeat center/2px 100%;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 const StyledMenu = styled(Button)`
   display: flex;
   align-items: center;
@@ -70,10 +74,10 @@ const Navbar = () => {
                     <CloseIcon />
                   </ListItem>
                   <ListItem button>
-                    <Link to="/">Home</Link>
+                    <StyledLink to="/">Home</StyledLink>
                   </ListItem>
                   <ListItem button>
-                    <Link to="/portfolio">Portfolio</Link>
+                    <StyledLink to="/portfolio">Portfolio</StyledLink>
                   </ListItem>
                 </List>
               </Drawer>

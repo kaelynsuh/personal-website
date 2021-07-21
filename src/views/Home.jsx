@@ -248,7 +248,7 @@ const Home = () => {
 
           <P>
             When I am not coding I enjoy streaming video games on twitch,
-            attempting art and yoga.
+            attempting digital art and yoga.
           </P>
 
           {/* <div>and here. more about me here</div> */}
