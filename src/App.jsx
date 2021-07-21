@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.css';
-import Home from './views/Home';
+import Container from './views/Container';
 
 import { ThemeProvider } from 'styled-components';
 import {
@@ -102,15 +102,15 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
+const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Home />
+        <Container />
       </ThemeProvider>
     </MuiThemeProvider>
   );
-}
+};
 
 export default App;

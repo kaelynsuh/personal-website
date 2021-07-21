@@ -32,22 +32,12 @@ const NavIcon = styled.a`
 
 const StyledOutlinedCircle = styled(FiberManualRecordOutlinedIcon)`
   transition: all 2s ease;
-
-  /* &:hover {
-    opacity: 0;
-  } */
 `;
 
 const StyledFilledCircleIcon = styled(FiberManualRecordIcon)`
   position: absolute;
 
   transition: all 2s ease;
-  /* opacity: 0; */
-  /* opacity: ${(props) => (props.isHovered ? 1 : 0)}; */
-
-  /* &:hover {
-    opacity: 1;
-  } */
 `;
 
 const SideNavItems = ({ name }) => {
@@ -72,12 +62,6 @@ const SideNavItems = ({ name }) => {
           onMouseEnter={() => setIsShown({ ...isShown, [navItem]: true })}
           onMouseLeave={() => setIsShown({ ...isShown, [navItem]: false })}
         >
-          {/* {isShown[navItem] ? (
-            <StyledFilledCircleIcon />
-          ) : (
-            <StyledOutlinedCircle />
-          )} */}
-
           <StyledOutlinedCircle />
           {isShown[navItem] && <StyledFilledCircleIcon />}
         </NavIcon>

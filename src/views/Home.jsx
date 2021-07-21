@@ -1,46 +1,29 @@
 /* eslint-disable no-debugger */
-/* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {
-  AppBar,
-  Button,
-  Container,
-  Drawer,
-  IconButton,
-  Link,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Tabs,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
-
-// import { TabPanel } from '@material-ui/lab';
-// import TabPanel from '@material-ui/lab/TabPanel';
+import { Button, Container, Link } from '@material-ui/core';
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
-
-// import { useTheme } from '@material-ui/core/styles';
-
-import logo from '../lib/assets/images/logo.png';
-
-// import kae from '../lib/assets/images/kae.jpg';
-import kae2 from '../lib/assets/images/kae2.jpeg';
 
 import SideNavItems from './SideNavItems';
+
+import kae2 from '../lib/assets/images/kae2.jpeg';
+
+const SideNav = styled.div`
+  position: fixed;
+  top: 50%;
+  right: 0%;
+  margin-right: 2rem;
+`;
+
+const Ul = styled.ul`
+  list-style-type: none;
+`;
 
 // Profile
 const Profile = styled.div`
@@ -63,29 +46,15 @@ const ProfileInfo = styled.div`
 `;
 
 const Name = styled.div`
-  /* background-color: #fff; */
-  /* background-color: #f2d9cd; */
-
-  /* background-color: #e2c1bd; */
-  /* color: #fff; */
-
   /* font-family: 'Libre Baskerville Italic'; */
-  font-size: 3.5rem;
   /* font-weight: bold; */
+  font-size: 3.5rem;
 
   padding: 0 1rem;
 `;
 
 const Title = styled.div`
-  /* background-color: #fff; */
-  /* background-color: #f2d9cd; */
-
-  /* background-color: #e2c1bd; */
-
-  /* color: #fff; */
-
   font-size: 1.6rem;
-  /* font-weight: bold; */
 
   padding: 0 1rem 0.5rem 1rem;
 `;
@@ -93,16 +62,6 @@ const Title = styled.div`
 const ProfilePhoto = styled.img`
   margin: 2rem;
   width: 670px;
-
-  /* opacity: 0.6; */
-`;
-
-const Logo = styled.img`
-  width: 40px;
-  /* margin: 2rem; */
-  /* width: 670px; */
-
-  /* opacity: 0.6; */
 `;
 
 const P = styled.p`
@@ -120,14 +79,12 @@ const StyledButton = styled(Button)`
   text-transform: capitalize;
   transition: all 0.4s ease;
 
-  /* revisit: revert below maybe */
   box-shadow: none;
 
   &:hover {
     background-color: #fbd8c9;
     color: #fff;
 
-    /* revisit: revert below maybe */
     box-shadow: none;
   }
 `;
@@ -138,26 +95,6 @@ const StyledContainer = styled(Container)`
 
 const StyledLink = styled(Link)`
   color: #000000;
-`;
-
-const StyledMenu = styled(Button)`
-  /* display: block; */
-  display: flex;
-  align-items: center;
-
-  @media screen and (min-width: 404px) {
-    display: none;
-  }
-`;
-
-const StyledMenuItems = styled(Button)`
-  text-transform: capitalize;
-
-  display: none;
-
-  @media screen and (min-width: 404px) {
-    display: block;
-  }
 `;
 
 // About Me
@@ -236,17 +173,6 @@ const MadeWith = styled.div`
   align-items: center;
 `;
 
-const SideNav = styled.div`
-  position: fixed;
-  top: 50%;
-  right: 0%;
-  margin-right: 2rem;
-`;
-
-const Ul = styled.ul`
-  list-style-type: none;
-`;
-
 // CONTENT
 const SectionTitle = styled.div`
   font-size: 2.5rem;
@@ -256,18 +182,13 @@ const SectionTitle = styled.div`
   /* font-weight: bold; */
 `;
 
-const Date = styled.div`
-  /* font-weight: bold; */
-`;
+const Date = styled.div``;
 
 const SubHeading = styled.div`
   font-weight: bold;
 `;
 
 const Home = () => {
-  // const theme = useTheme();
-  const [showMenu, setShowMenu] = useState(false);
-
   const scrollToTop = () => {
     window.scroll({
       top: 0,
@@ -290,47 +211,6 @@ const Home = () => {
         </nav>
       </SideNav>
 
-      <AppBar position="static">
-        <StyledContainer maxWidth="md" style={{ padding: 0 }}>
-          <Toolbar style={{ padding: 0 }}>
-            <StyledMenu onClick={() => setShowMenu(true)}>
-              <MenuIcon />
-            </StyledMenu>
-            <Drawer
-              anchor="top"
-              open={showMenu}
-              onClose={() => setShowMenu(false)}
-            >
-              <List>
-                <ListItem button onClick={() => setShowMenu(false)}>
-                  <CloseIcon />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText primary="Home" />
-                </ListItem>
-                <ListItem button>
-                  <ListItemText primary="Portfolio" />
-                </ListItem>
-              </List>
-            </Drawer>
-
-            {/* revisit: padding's circular, maybe change this to Button instead */}
-            <Button edge="start" color="inherit" aria-label="menu" href="/">
-              <Logo src={logo} alt="logo" />
-            </Button>
-
-            <StyledMenuItems color="inherit" href="/">
-              Home
-            </StyledMenuItems>
-            <StyledMenuItems color="inherit" href="/portfolio">
-              Portfolio
-            </StyledMenuItems>
-          </Toolbar>
-        </StyledContainer>
-      </AppBar>
-
-      {/* revisit: wrap profile in container */}
-      {/* <StyledContainer maxWidth="md"> */}
       <Profile>
         <ProfileInfo>
           <Name>Kaelyn Suh</Name>
@@ -374,14 +254,10 @@ const Home = () => {
             Ownership of the Borrower&apos;s Portal, where consumers can service
             and manage their loans. It was re-platformed from Clojure to React
             and Redux. Other projects on the platform include scheduling
-            payments, down payments, beyond travel functionality, FAQ&apos;s and
-            search capability.
-          </P>
-
-          <P>
-            Also built the CCPA (California Consumer Privacy Act) Portal where
-            users can opt out of data sharing, written in React, Typescript,
-            GraphQL and Apollo.
+            payments, down payments, beyond travel functionality, FAQs and
+            search capability. Also built the CCPA (California Consumer Privacy
+            Act) Portal where users can opt out of data sharing, written in
+            React, Typescript, GraphQL and Apollo.
           </P>
 
           <br />
@@ -392,9 +268,11 @@ const Home = () => {
           <P>
             Worked on a B2B platform providing a &quot;Seed-to-Sale&quot;
             ecosystem for cannabis businesses. The portal allowed tracking and
-            reporting plant growth as well as medical and recreational sales.
-            Some technologies used include Vue, Vuex, Ruby on Rails, PostgreSQL,
-            Docker, Kubernetes and AWS technologies.
+            reporting plant growth as well as medical and recreational sales. In
+            addition, I worked closely with the DevOps team in new client
+            implementation, infrastructure maintenance, deployments and
+            monitoring. Some technologies used include Vue, Vuex, Ruby on Rails,
+            PostgreSQL, Docker, Kubernetes and AWS technologies.
           </P>
 
           <br />
@@ -404,9 +282,10 @@ const Home = () => {
           <SubHeading>Software Developer - E-Data Now</SubHeading>
           <P>
             Worked on a Web app to allow users to manage and track production
-            and manufacturing processes. Also managed the support portal where
-            users can submit and manage requests. Some technologies used include
-            Vue, Vuex, Ruby on Rails, PostreSQL, Docker and AWS technologies.
+            and manufacturing processes. Also re-platformed the support portal
+            from ERB to Vue where users can submit and manage support requests.
+            Some technologies used include Vue, Vuex, Ruby on Rails, PostreSQL,
+            Docker and AWS technologies.
           </P>
         </WorkExperience>
 
@@ -444,9 +323,11 @@ const Home = () => {
         </Education>
 
         <Portfolio>
-          <StyledButton variant="contained" color="primary">
-            View My Portfolio
-          </StyledButton>
+          <ReactRouterLink to="/portfolio" style={{ textDecoration: 'none' }}>
+            <StyledButton variant="contained" color="primary">
+              View My Portfolio
+            </StyledButton>
+          </ReactRouterLink>
         </Portfolio>
 
         <ContactMe id="contact-me">
