@@ -19,10 +19,15 @@ import SideNavItems from './SideNavItems';
 import kae2 from '../lib/assets/images/kae2.jpeg';
 
 const SideNav = styled.div`
-  position: fixed;
-  top: 50%;
-  right: 0%;
-  margin-right: 2rem;
+  display: none;
+
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    margin-right: 2rem;
+  }
 `;
 
 const Ul = styled.ul`
@@ -44,44 +49,73 @@ const ProfileInfo = styled.div`
   justify-content: center;
   align-items: flex-end;
 
-  font-size: 2rem;
-  margin-right: -7rem;
   z-index: 1;
+
+  margin-right: -7rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    font-size: 2rem;
+    margin-right: -7rem;
+  }
 `;
 
 const Name = styled.div`
   /* font-family: 'Libre Baskerville Italic'; */
   /* font-weight: bold; */
-  font-size: 3.5rem;
+  /* font-family: 'Indie Flower'; */
 
-  padding: 0 1rem;
+  font-size: 1.5rem;
+  padding: 0 0 0 2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    font-size: 3.5rem;
+    padding: 0 1rem;
+  }
 `;
 
-const Title = styled.div`
-  font-size: 1.6rem;
-
-  padding: 0 1rem 0.5rem 1rem;
+const JobTitle = styled.div`
+  font-size: 1rem;
+  padding: 0 0 0 2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    font-size: 1.6rem;
+    padding: 0 1rem 0.5rem 1rem;
+  }
 `;
 
 const ProfilePhoto = styled.img`
-  margin: 2rem;
-  width: 670px;
+  width: 100%;
+
+  /* revisit: trim photo */
+  margin-right: -7rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 2rem;
+    width: 670px;
+  }
 `;
 
 const P = styled.p`
   text-align: justify;
+
+  margin: 0.5rem 0;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 1rem 0;
+  }
 `;
 
 const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
   cursor: pointer;
   transform: rotate(90deg);
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fbd8c9;
+  }
 `;
 
 const StyledButton = styled(Button)`
   border-radius: 0;
   padding: 1rem 4rem;
   text-transform: capitalize;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 
   box-shadow: none;
 
@@ -98,7 +132,14 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledLink = styled(Link)`
-  color: #000000;
+  color: #000000de;
+`;
+
+const StyledLinkBold = styled(Link)`
+  color: #000000de;
+  /* color: #ba6d6dde; */
+  /* color: #e19f9f; */
+  font-weight: bold;
 `;
 
 // About Me
@@ -107,9 +148,14 @@ const AboutMe = styled.div`
   flex-direction: column;
   text-align: center;
 
-  margin: 2rem 2rem 5rem 2rem;
-  padding: 5rem;
   background-color: #fafafa;
+
+  margin-bottom: 5rem;
+  padding: 5rem 0;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 2rem 2rem 5rem 2rem;
+    padding: 5rem;
+  }
 `;
 
 // WorkExperience
@@ -118,8 +164,12 @@ const WorkExperience = styled.div`
   border: 7px solid ${(props) => props.theme.palette.primary.main};
   text-align: center;
 
-  margin: 0 2rem;
-  padding: 5rem 6rem;
+  margin-bottom: 5rem;
+  padding: 2rem 0.2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 0 2rem;
+    padding: 5rem 6rem;
+  }
 `;
 
 // Skills
@@ -128,8 +178,12 @@ const Skills = styled.div`
   border: 7px solid ${(props) => props.theme.palette.primary.main};
   text-align: center;
 
-  margin: 9rem 10rem;
-  padding: 5rem 2rem;
+  margin-bottom: 5rem;
+  padding: 2rem 0.2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 9rem 10rem;
+    padding: 5rem 2rem;
+  }
 `;
 
 // Education
@@ -138,14 +192,20 @@ const Education = styled.div`
   border: 7px solid ${(props) => props.theme.palette.primary.main};
   text-align: center;
 
-  margin: 9rem 7rem;
-  padding: 5rem 2rem;
+  margin-bottom: 5rem;
+  padding: 2rem 0.2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 9rem 7rem;
+    padding: 5rem 2rem;
+  }
 `;
 
 // Portfolio
 const Portfolio = styled.div`
   display: flex;
   justify-content: center;
+
+  margin-bottom: 5rem;
 `;
 
 // ContactMe
@@ -158,8 +218,12 @@ const ContactMe = styled.div`
   border: 7px solid ${(props) => props.theme.palette.primary.main};
   text-align: center;
 
-  margin: 9rem 9rem 2rem 9rem;
-  padding: 5rem 2rem;
+  margin-bottom: 5rem;
+  padding: 5rem 0.2rem;
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin: 9rem 9rem 2rem 9rem;
+    padding: 5rem 2rem;
+  }
 `;
 
 const Icons = styled.div`
@@ -185,7 +249,11 @@ const MadeWith = styled.div`
 // CONTENT
 const SectionTitle = styled.div`
   font-size: 2.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    padding-bottom: 2rem;
+  }
 
   /* font-family: 'Indie Flower'; */
   /* font-weight: bold; */
@@ -223,7 +291,7 @@ const Home = () => {
       <Profile>
         <ProfileInfo>
           <Name>Kaelyn Suh</Name>
-          <Title>Software Developer</Title>
+          <JobTitle>Software Developer</JobTitle>
         </ProfileInfo>
         <ProfilePhoto src={kae2} alt="Profile Photo" />
       </Profile>
@@ -239,26 +307,46 @@ const Home = () => {
           </P>
 
           <P>
-            Currently I am working at Uplift making travel accessible and
-            affordable for everyone. Previously I worked at Ample Organics
-            making medical cannabis safely accessible to those in need, and
-            prior to that I was at E-Data Now making quality assurance compliant
-            in the automotive space.
+            Currently I am working at&nbsp;
+            <StyledLinkBold
+              href="https://uplift.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Uplift
+            </StyledLinkBold>
+            &nbsp;making travel accessible and affordable for everyone.
+            Previously I worked at&nbsp;
+            <StyledLinkBold
+              href="https://ampleorganics.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Ample Organics
+            </StyledLinkBold>
+            &nbsp;making medical cannabis safely accessible to those in need,
+            and prior to that I was at&nbsp;
+            <StyledLinkBold
+              href="https://www.edatanow.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              E-Data Now
+            </StyledLinkBold>
+            &nbsp;making quality assurance compliant in the automotive space.
           </P>
 
           <P>
             When I am not coding I enjoy streaming video games on twitch,
-            attempting digital art and yoga.
+            attempting digital art, binging anime and yoga.
           </P>
-
-          {/* <div>and here. more about me here</div> */}
         </AboutMe>
 
         <WorkExperience id="work-experience">
           <SectionTitle>Work Experience</SectionTitle>
 
-          <Date>Oct 2019 - Present</Date>
           <SubHeading>Software Engineer - Uplift Inc.</SubHeading>
+          <Date>October 2019 - Present</Date>
           <P>
             Ownership of the Borrower&apos;s Portal, where consumers can service
             and manage their loans. It was re-platformed from Clojure to React
@@ -272,8 +360,8 @@ const Home = () => {
           <br />
           <br />
 
-          <Date>Sept 2018 - Oct 2019</Date>
           <SubHeading>Software Developer - Ample Organics</SubHeading>
+          <Date>September 2018 - October 2019</Date>
           <P>
             Worked on a B2B platform providing a &quot;Seed-to-Sale&quot;
             ecosystem for cannabis businesses. The portal allowed tracking and
@@ -287,8 +375,8 @@ const Home = () => {
           <br />
           <br />
 
-          <Date>May 2017 - Sept 2018</Date>
           <SubHeading>Software Developer - E-Data Now</SubHeading>
+          <Date>May 2017 - September 2018</Date>
           <P>
             Worked on a Web app to allow users to manage and track production
             and manufacturing processes. Also re-platformed the support portal
@@ -314,16 +402,19 @@ const Home = () => {
 
           <br />
           <br />
+
+          <SubHeading>Others</SubHeading>
+          <p>UX / UI design, Technical writing</p>
         </Skills>
 
         <Education id="education">
           <SectionTitle>Education</SectionTitle>
 
-          <Date>Sept 2012 - Apr 2016</Date>
           <SubHeading>
             Queen&apos;s University - Bachelor of Computing
             {/* Queen&apos;s University - Bachelor of Computing, Computer Science */}
           </SubHeading>
+          <Date>September 2012 - April 2016</Date>
           <br />
           <p>Recipient of the Queen&apos;s University Excellence Scholarship</p>
           <p>
@@ -392,11 +483,11 @@ const Home = () => {
       <Container maxWidth="md">
         <Footer>
           <StyledArrowBackIosIcon onClick={scrollToTop} />
-          <MadeWith>
-            {/* <div>Made with&nbsp;</div>
+          {/* <MadeWith>
+            <div>Made with&nbsp;</div>
             <FavoriteIcon style={{ fontSize: '1.2rem' }} />
-            <div>&nbsp;using React and Material UI</div> */}
-          </MadeWith>
+            <div>&nbsp;using React and Material UI</div>
+          </MadeWith> */}
           <div>© 2021 Kaelyn Suh</div>
         </Footer>
       </Container>

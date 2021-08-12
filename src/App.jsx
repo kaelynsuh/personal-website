@@ -4,6 +4,7 @@ import './App.css';
 import Container from './views/Container';
 
 import { ThemeProvider } from 'styled-components';
+
 import {
   createMuiTheme,
   makeStyles,
@@ -99,6 +100,18 @@ const theme = createMuiTheme({
         ],
       },
     },
+  },
+  minWidth: {
+    atto: '321px',
+    femto: '404px',
+    pico: '481px',
+    nano: '641px',
+    micro: '768px',
+    milli: '796px',
+    kilo: '961px',
+    mega: '992px',
+    giga: '1025px',
+    tera: '1281px',
   },
 });
 

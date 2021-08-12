@@ -27,10 +27,17 @@ const Logo = styled.img`
 
 const StyledContainer = styled(Container)`
   background: linear-gradient(#ffeae0, #ffeae0) no-repeat center/2px 100%;
+
+  padding: 0;
 `;
 
 const StyledLink = styled(Link)`
+  color: #000000de;
   text-decoration: none;
+`;
+
+const StyledList = styled(List)`
+  background-color: ${(props) => props.theme.palette.primary.main};
 `;
 
 const StyledMenu = styled(Button)`
@@ -52,6 +59,10 @@ const StyledMenuItems = styled(Button)`
   }
 `;
 
+const StyledToolbar = styled(Toolbar)`
+  padding: 0;
+`;
+
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -59,8 +70,8 @@ const Navbar = () => {
     <>
       <Router>
         <AppBar position="static">
-          <StyledContainer maxWidth="md" style={{ padding: 0 }}>
-            <Toolbar style={{ padding: 0 }}>
+          <StyledContainer maxWidth="md">
+            <StyledToolbar>
               <StyledMenu onClick={() => setShowMenu(true)}>
                 <MenuIcon />
               </StyledMenu>
@@ -69,17 +80,20 @@ const Navbar = () => {
                 open={showMenu}
                 onClose={() => setShowMenu(false)}
               >
-                <List>
+                <StyledList>
                   <ListItem button onClick={() => setShowMenu(false)}>
                     <CloseIcon />
                   </ListItem>
-                  <ListItem button>
-                    <StyledLink to="/">Home</StyledLink>
-                  </ListItem>
-                  <ListItem button>
-                    <StyledLink to="/portfolio">Portfolio</StyledLink>
-                  </ListItem>
-                </List>
+                  <StyledLink to="/" onClick={() => setShowMenu(false)}>
+                    <ListItem button>Home</ListItem>
+                  </StyledLink>
+                  <StyledLink
+                    to="/portfolio"
+                    onClick={() => setShowMenu(false)}
+                  >
+                    <ListItem button>Portfolio</ListItem>
+                  </StyledLink>
+                </StyledList>
               </Drawer>
 
               <Button edge="start" color="inherit" aria-label="menu" href="/">
@@ -92,7 +106,7 @@ const Navbar = () => {
               <StyledMenuItems color="inherit" href="/portfolio">
                 Portfolio
               </StyledMenuItems>
-            </Toolbar>
+            </StyledToolbar>
           </StyledContainer>
         </AppBar>
 

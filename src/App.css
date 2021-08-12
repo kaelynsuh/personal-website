@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+/* revisit: try to remove padding on x */
+/* .MuiContainer-root {
+  padding: 0 !important;
+
+  @media screen and (min-width: 641px) {
+    padding: 0 1rem !important;
+  }
+} */
