@@ -16,7 +16,9 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 
 import SideNavItems from './SideNavItems';
 
-import kae2 from '../lib/assets/images/kae2.jpeg';
+import kae from '../lib/assets/images/kae.jpeg';
+
+// import kae2 from '/public/kae2.jpeg';
 
 const SideNav = styled.div`
   display: none;
@@ -293,7 +295,7 @@ const Home = () => {
           <Name>Kaelyn Suh</Name>
           <JobTitle>Software Developer</JobTitle>
         </ProfileInfo>
-        <ProfilePhoto src={kae2} alt="Profile Photo" />
+        <ProfilePhoto src={kae} alt="Profile Photo" />
       </Profile>
 
       <StyledContainer maxWidth="md">
@@ -327,7 +329,7 @@ const Home = () => {
             &nbsp;making medical cannabis safely accessible to those in need,
             and prior to that I was at&nbsp;
             <StyledLinkBold
-              href="https://www.edatanow.com/"
+              href="https://edatanow.com/"
               target="_blank"
               rel="noopener"
             >
