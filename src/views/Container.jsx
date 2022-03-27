@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import Home from './Home';
 import Portfolio from './Portfolio';
+import Footer from './Footer';
 
 import {
   AppBar,
@@ -119,6 +120,8 @@ const Navbar = () => {
           </Route>
         </Switch>
       </Router>
+
+      <Footer />
     </>
   );
 };

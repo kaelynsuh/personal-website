@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-debugger */
 import React from 'react';
 import styled from 'styled-components';
@@ -8,7 +7,6 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch } from '@fortawesome/free-brands-svg-icons';
 
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -17,8 +15,6 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import SideNavItems from './SideNavItems';
 
 import kae from '../lib/assets/images/kae.jpeg';
-
-// import kae2 from '/public/kae2.jpeg';
 
 const SideNav = styled.div`
   display: none;
@@ -99,17 +95,6 @@ const P = styled.p`
   margin: 0.5rem 0;
   @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
     margin: 1rem 0;
-  }
-`;
-
-const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
-  cursor: pointer;
-  transform: rotate(90deg);
-
-  transition: all 0.2s ease;
-
-  &:hover {
-    color: #fbd8c9;
   }
 `;
 
@@ -233,21 +218,6 @@ const Icons = styled.div`
   align-items: center;
 `;
 
-// Footer
-const Footer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  font-size: 1.1rem;
-  padding: 2rem 0;
-`;
-
-const MadeWith = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 // CONTENT
 const SectionTitle = styled.div`
   font-size: 2.5rem;
@@ -268,14 +238,6 @@ const SubHeading = styled.div`
 `;
 
 const Home = () => {
-  const scrollToTop = () => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  };
-
   return (
     <>
       <SideNav>
@@ -347,7 +309,7 @@ const Home = () => {
         <WorkExperience id="work-experience">
           <SectionTitle>Work Experience</SectionTitle>
 
-          <SubHeading>Software Engineer - Uplift Inc.</SubHeading>
+          <SubHeading>Senior Software Engineer - Uplift Inc.</SubHeading>
           <Date>October 2019 - Present</Date>
           <P>
             Ownership of the Borrower&apos;s Portal, where consumers can service
@@ -481,18 +443,6 @@ const Home = () => {
           </Icons>
         </ContactMe>
       </StyledContainer>
-
-      <Container maxWidth="md">
-        <Footer>
-          <StyledArrowBackIosIcon onClick={scrollToTop} />
-          {/* <MadeWith>
-            <div>Made with&nbsp;</div>
-            <FavoriteIcon style={{ fontSize: '1.2rem' }} />
-            <div>&nbsp;using React and Material UI</div>
-          </MadeWith> */}
-          <div>© 2021 Kaelyn Suh</div>
-        </Footer>
-      </Container>
     </>
   );
 };
