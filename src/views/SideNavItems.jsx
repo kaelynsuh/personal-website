@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-debugger */
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Transition } from 'react-transition-group';
+// import { Transition } from 'react-transition-group';
 // import { CSSTransition } from 'react-transition-group';
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
@@ -43,7 +40,8 @@ const StyledFilledCircleIcon = styled(FiberManualRecordIcon)`
 const SideNavItems = ({ name }) => {
   const [isShown, setIsShown] = useState({});
 
-  let navItem = name.replace(/\s+/g, '-').toLowerCase();
+  const navItem =
+    name !== 'Home' ? name.replace(/\s+/g, '-').toLowerCase() : '';
 
   return (
     <>

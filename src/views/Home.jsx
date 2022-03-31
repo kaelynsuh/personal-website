@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React from 'react';
 import styled from 'styled-components';
 import { Button, Container, Link } from '@material-ui/core';
@@ -120,12 +119,16 @@ const StyledContainer = styled(Container)`
 
 const StyledLink = styled(Link)`
   color: #000000de;
+
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fbd8c9;
+  }
 `;
 
 const StyledLinkBold = styled(Link)`
   color: #000000de;
-  /* color: #ba6d6dde; */
-  /* color: #e19f9f; */
   font-weight: bold;
 `;
 
@@ -208,7 +211,7 @@ const ContactMe = styled.div`
   margin-bottom: 5rem;
   padding: 5rem 0.2rem;
   @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
-    margin: 9rem 9rem 2rem 9rem;
+    margin: 9rem;
     padding: 5rem 2rem;
   }
 `;
@@ -243,6 +246,7 @@ const Home = () => {
       <SideNav>
         <nav>
           <Ul>
+            <SideNavItems name="Home" />
             <SideNavItems name="About Me" />
             <SideNavItems name="Work Experience" />
             <SideNavItems name="Skills" />
@@ -403,7 +407,6 @@ const Home = () => {
             kaelyn@kaelyn.dev
           </StyledLink>
           <br />
-          {/* github, StyledLinkedin, twitter, insta, twitch */}
           <Icons>
             <StyledLink
               href="https://github.com/kaelynsuh"

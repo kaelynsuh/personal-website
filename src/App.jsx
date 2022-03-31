@@ -1,15 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import './App.css';
 import Container from './views/Container';
 
 import { ThemeProvider } from 'styled-components';
 
-import {
-  createMuiTheme,
-  makeStyles,
-  MuiThemeProvider,
-} from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
 // import '@fontsource/roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';

@@ -1,10 +1,10 @@
-/* eslint-disable no-debugger */
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Home from './Home';
 import Portfolio from './Portfolio';
+import Contact from './Contact';
 import Footer from './Footer';
 
 import {
@@ -107,6 +107,11 @@ const Navbar = () => {
               <StyledMenuItems color="inherit" href="/portfolio">
                 Portfolio
               </StyledMenuItems>
+
+              {/* revisit: new page for contact me */}
+              <StyledMenuItems color="inherit" href="/#contact-me">
+                Contact
+              </StyledMenuItems>
             </StyledToolbar>
           </StyledContainer>
         </AppBar>
@@ -114,6 +119,9 @@ const Navbar = () => {
         <Switch>
           <Route path="/portfolio">
             <Portfolio />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/">
             <Home />

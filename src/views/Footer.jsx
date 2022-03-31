@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '@material-ui/core';
@@ -26,10 +25,10 @@ const FooterStyles = styled.div`
   padding: 2rem 0;
 `;
 
-const MadeWith = styled.div`
-  display: flex;
-  align-items: center;
-`;
+// const MadeWith = styled.div`
+//   display: flex;
+//   align-items: center;
+// `;
 
 const Footer = () => {
   const scrollToTop = () => {
