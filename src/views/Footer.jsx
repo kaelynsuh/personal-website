@@ -40,7 +40,7 @@ const Footer = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" style={{ marginTop: 'auto' }}>
       <FooterStyles>
         <StyledArrowBackIosIcon onClick={scrollToTop} />
         {/* <MadeWith>

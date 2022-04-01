@@ -3,15 +3,8 @@ import styled from 'styled-components';
 import { Button, Container, Link } from '@material-ui/core';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitch } from '@fortawesome/free-brands-svg-icons';
-
-import GitHubIcon from '@material-ui/icons/GitHub';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import TwitterIcon from '@material-ui/icons/Twitter';
-
 import SideNavItems from './SideNavItems';
+import Contact from './Contact';
 
 import kae from '../lib/assets/images/kae.jpeg';
 
@@ -117,16 +110,6 @@ const StyledContainer = styled(Container)`
   background: linear-gradient(#ffeae0, #ffeae0) no-repeat center/2px 100%;
 `;
 
-const StyledLink = styled(Link)`
-  color: #000000de;
-
-  transition: all 0.2s ease;
-
-  &:hover {
-    color: #fbd8c9;
-  }
-`;
-
 const StyledLinkBold = styled(Link)`
   color: #000000de;
   font-weight: bold;
@@ -196,29 +179,6 @@ const Portfolio = styled.div`
   justify-content: center;
 
   margin-bottom: 5rem;
-`;
-
-// ContactMe
-const ContactMe = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: #fafafa;
-  border: 7px solid ${(props) => props.theme.palette.primary.main};
-  text-align: center;
-
-  margin-bottom: 5rem;
-  padding: 5rem 0.2rem;
-  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
-    margin: 9rem;
-    padding: 5rem 2rem;
-  }
-`;
-
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
 `;
 
 // CONTENT
@@ -398,53 +358,7 @@ const Home = () => {
           </ReactRouterLink>
         </Portfolio>
 
-        <ContactMe id="contact-me">
-          <SectionTitle>Contact Me</SectionTitle>
-          <StyledLink
-            href="mailto:kaelyn@kaelyn.dev"
-            style={{ color: 'black' }}
-          >
-            kaelyn@kaelyn.dev
-          </StyledLink>
-          <br />
-          <Icons>
-            <StyledLink
-              href="https://github.com/kaelynsuh"
-              target="_blank"
-              rel="noopener"
-            >
-              <GitHubIcon />
-            </StyledLink>
-            <StyledLink
-              href="https://www.linkedin.com/in/kaelynsuh"
-              target="_blank"
-              rel="noopener"
-            >
-              <LinkedInIcon />
-            </StyledLink>
-            <StyledLink
-              href="https://www.instagram.com/kaelynsuh"
-              target="_blank"
-              rel="noopener"
-            >
-              <InstagramIcon />
-            </StyledLink>
-            <StyledLink
-              href="https://twitter.com/kaelynsuh"
-              target="_blank"
-              rel="noopener"
-            >
-              <TwitterIcon />
-            </StyledLink>
-            <StyledLink
-              href="https://www.twitch.tv/kae_tv"
-              target="_blank"
-              rel="noopener"
-            >
-              <FontAwesomeIcon icon={faTwitch} style={{ fontSize: '1.6rem' }} />
-            </StyledLink>
-          </Icons>
-        </ContactMe>
+        <Contact />
       </StyledContainer>
     </>
   );

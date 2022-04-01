@@ -26,6 +26,14 @@ const Logo = styled.img`
   width: 40px;
 `;
 
+const ContactContainer = styled(Container)`
+  margin-top: 5rem;
+
+  @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
+    margin-top: 0;
+  }
+`;
+
 const StyledContainer = styled(Container)`
   background: linear-gradient(#ffeae0, #ffeae0) no-repeat center/2px 100%;
 
@@ -70,7 +78,7 @@ const Navbar = () => {
   return (
     <>
       <Router>
-        <AppBar position="static">
+        <AppBar position="static" style={{ boxShadow: 'none' }}>
           <StyledContainer maxWidth="md">
             <StyledToolbar>
               <StyledMenu onClick={() => setShowMenu(true)}>
@@ -109,7 +117,7 @@ const Navbar = () => {
               </StyledMenuItems>
 
               {/* revisit: new page for contact me */}
-              <StyledMenuItems color="inherit" href="/#contact-me">
+              <StyledMenuItems color="inherit" href="/contact">
                 Contact
               </StyledMenuItems>
             </StyledToolbar>
@@ -121,7 +129,9 @@ const Navbar = () => {
             <Portfolio />
           </Route>
           <Route path="/contact">
-            <Contact />
+            <ContactContainer maxWidth="md">
+              <Contact />
+            </ContactContainer>
           </Route>
           <Route path="/">
             <Home />

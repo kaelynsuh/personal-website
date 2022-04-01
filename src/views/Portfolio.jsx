@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   justify-content: center;
 
   background-color: ${(props) => props.theme.palette.primary.main};
-  padding: 3rem 0;
+  padding: 3rem 1rem;
 `;
 
 const Portfolio = () => {
