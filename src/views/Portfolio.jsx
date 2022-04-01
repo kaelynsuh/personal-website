@@ -3,9 +3,8 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import { Card, CardContent, Typography } from '@material-ui/core';
+import LoopIcon from '@material-ui/icons/Loop';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -29,8 +28,29 @@ const useStyles = makeStyles({
 const Content = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   padding: 2rem;
+`;
+
+const Loading = styled.div`
+  font-weight: bold;
+`;
+
+const StyledLoopIcon = styled(LoopIcon)`
+  font-size: 1.4rem;
+  margin-right: 0.2rem;
+
+  animation: loader-rotate 2s infinite linear;
+
+  @keyframes loader-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 const Wrapper = styled.div`
@@ -75,7 +95,12 @@ const Portfolio = () => {
         </h3>
       </Wrapper>
 
-      {loading && <Content>Loading...</Content>}
+      {loading && (
+        <Content>
+          <StyledLoopIcon />
+          <Loading>Loading...</Loading>
+        </Content>
+      )}
 
       {error && (
         <Content>There was an error getting results. Please try again.</Content>
