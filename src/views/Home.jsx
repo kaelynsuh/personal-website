@@ -1,12 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
 import { Button, Container, Link } from '@material-ui/core';
-import { Link as ReactRouterLink } from 'react-router-dom';
 
-import SideNavItems from './SideNavItems';
 import Contact from './Contact';
-
+import React from 'react';
+import { Link as ReactRouterLink } from 'react-router-dom';
+import SideNavItems from './SideNavItems';
 import kae from '../lib/assets/images/kae.jpeg';
+import styled from 'styled-components';
 
 const SideNav = styled.div`
   display: none;
@@ -30,7 +29,7 @@ const Profile = styled.div`
   justify-content: center;
 
   background-color: ${(props) => props.theme.palette.primary.main};
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
 `;
 
 const ProfileInfo = styled.div`
@@ -76,7 +75,7 @@ const ProfilePhoto = styled.img`
   /* revisit: trim photo */
   margin-right: -7rem;
   @media screen and (min-width: ${(props) => props.theme.minWidth.nano}) {
-    margin: 2rem;
+    margin: 2rem 0 0 0;
     width: 670px;
   }
 `;
@@ -219,7 +218,7 @@ const Home = () => {
       <Profile>
         <ProfileInfo>
           <Name>Kaelyn Suh</Name>
-          <JobTitle>Software Developer</JobTitle>
+          <JobTitle>Software Engineer</JobTitle>
         </ProfileInfo>
         <ProfilePhoto src={kae} alt="Profile Photo" />
       </Profile>
@@ -229,13 +228,22 @@ const Home = () => {
           <SectionTitle>About Me</SectionTitle>
           {/* <Typography variant="h6">About Me</Typography> */}
           <P>
-            Hi! My name is Kaelyn. I&apos;m a Software Developer based in
-            Toronto. I am passionate about building beautiful interfaces and
-            making the web accessible for all.
+            Hi! My name is Kaelyn. I&apos;m a Software Engineer from Canada
+            based in Irvine, California. I am passionate about building
+            beautiful interfaces and making the web accessible for all.
           </P>
 
           <P>
             Currently I am working at&nbsp;
+            <StyledLinkBold
+              href="https://www.blizzard.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              Blizzard Entertainment
+            </StyledLinkBold>
+            &nbsp;making e-commerce experience fun and seameles for gamers.
+            Previously I worked at&nbsp;
             <StyledLinkBold
               href="https://uplift.com/"
               target="_blank"
@@ -243,8 +251,8 @@ const Home = () => {
             >
               Uplift
             </StyledLinkBold>
-            &nbsp;making travel accessible and affordable for everyone.
-            Previously I worked at&nbsp;
+            &nbsp;making travel accessible and affordable for everyone, prior to
+            that I was at &nbsp;
             <StyledLinkBold
               href="https://ampleorganics.com/"
               target="_blank"
@@ -253,7 +261,7 @@ const Home = () => {
               Ample Organics
             </StyledLinkBold>
             &nbsp;making medical cannabis safely accessible to those in need,
-            and prior to that I was at&nbsp;
+            and I also worked at &nbsp;
             <StyledLinkBold
               href="https://edatanow.com/"
               target="_blank"
@@ -265,16 +273,34 @@ const Home = () => {
           </P>
 
           <P>
-            When I am not coding I enjoy streaming video games on twitch,
-            attempting digital art, binging anime and yoga.
+            When I am not coding I enjoy rock climbing, cosplaying, streaming
+            video games on twitch, attempting digital art and binging anime.
           </P>
         </AboutMe>
 
         <WorkExperience id="work-experience">
           <SectionTitle>Work Experience</SectionTitle>
 
+          <SubHeading>Software Engineer - Blizzard Entertainment</SubHeading>
+          <Date>April 2022 - Present</Date>
+          <P>
+            Maintained Battle.net e-commerce application (Angular and Java) with
+            20 million concurrent users, partaking in ops, on-call rotations,
+            resolving bugs, updating dependencies, and maintaining releases
+            developing features for deployment. Improved purchase conversion of
+            products by ~9% through various A/B tests focused on user behavior,
+            such as product ordering and interface changes. Integrated web app
+            with Battle.net Mobile App (iOS and Android) allowing users to allow
+            purchase in their respective mobile game apps to purchase in game.
+            Automated management of on-premise servers to limit toil during the
+            teamr&apos;s ongoing cloud migration efforts
+          </P>
+
+          <br />
+          <br />
+
           <SubHeading>Senior Software Engineer - Uplift Inc.</SubHeading>
-          <Date>October 2019 - Present</Date>
+          <Date>October 2019 - March 2022</Date>
           <P>
             Ownership of the Borrower&apos;s Portal, where consumers can service
             and manage their loans. It was re-platformed from Clojure to React

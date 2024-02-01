@@ -1,14 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from '@material-ui/core';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitch } from '@fortawesome/free-brands-svg-icons';
-
 import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { Link } from '@material-ui/core';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import React from 'react';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import { faTwitch } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
   color: #000000de;
@@ -82,14 +80,14 @@ const Home = () => {
             <LinkedInIcon />
           </StyledLink>
           <StyledLink
-            href="https://www.instagram.com/kaelynsuh"
+            href="https://www.instagram.com/kaelynge"
             target="_blank"
             rel="noopener"
           >
             <InstagramIcon />
           </StyledLink>
           <StyledLink
-            href="https://twitter.com/kaelynsuh"
+            href="https://twitter.com/kaelynge"
             target="_blank"
             rel="noopener"
           >

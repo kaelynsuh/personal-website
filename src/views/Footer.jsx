@@ -1,8 +1,8 @@
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { Container } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '@material-ui/core';
 
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
@@ -47,7 +47,7 @@ const Footer = () => {
           <div>Made with&nbsp;</div>
           <FavoriteIcon style={{ fontSize: '1.2rem' }} />
         </MadeWith> */}
-        <div>© 2022 Kaelyn Suh</div>
+        <div>© 2024 Kaelyn Suh</div>
       </FooterStyles>
     </Container>
   );
