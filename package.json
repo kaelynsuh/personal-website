@@ -2,6 +2,9 @@
   "name": "personal-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "dependencies": {
     "@fontsource/roboto": "^4.2.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
