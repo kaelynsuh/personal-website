@@ -242,8 +242,16 @@ const Home = () => {
             >
               Blizzard Entertainment
             </StyledLinkBold>
-            &nbsp;making e-commerce experience fun and seameles for gamers.
-            Previously I worked at&nbsp;
+            &nbsp;working on the{' '}
+            <StyledLinkBold
+              href="https://www.battle.net/"
+              target="_blank"
+              rel="noopener"
+            >
+              Battle.net
+            </StyledLinkBold>{' '}
+            e-commerce storefront delivering games and experiences to millions
+            of players. Previously I worked at&nbsp;
             <StyledLinkBold
               href="https://uplift.com/"
               target="_blank"
@@ -345,20 +353,21 @@ const Home = () => {
 
           <SubHeading>Technologies</SubHeading>
           <p>
-            React JS, Redux, Ruby on Rails, Vue JS, AWS, PostgreSQL, Docker, Git
+            Angular, RxJS, React, Redux, Ruby on Rails, Vue, AWS, PostgreSQL,
+            Docker, Git
           </p>
 
           <br />
           <br />
 
           <SubHeading>Languages</SubHeading>
-          <p>Javascript, Typescript, HTML & CSS, Ruby, Python, Java, SQL</p>
+          <p>Javascript, Typescript, HTML & CSS, Java, Ruby, Python, SQL</p>
 
           <br />
           <br />
 
           <SubHeading>Others</SubHeading>
-          <p>UX / UI design, Technical writing</p>
+          <p>Web Components, Figma, UX / UI design, Technical writing</p>
         </Skills>
 
         <Education id="education">
