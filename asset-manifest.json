@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0117995d.chunk.css",
+    "main.js": "/static/js/main.d50205c5.chunk.js",
+    "main.js.map": "/static/js/main.d50205c5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.07ec1ac5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.07ec1ac5.js.map",
+    "static/js/2.722576a9.chunk.js": "/static/js/2.722576a9.chunk.js",
+    "static/js/2.722576a9.chunk.js.map": "/static/js/2.722576a9.chunk.js.map",
+    "static/js/3.ab73552d.chunk.js": "/static/js/3.ab73552d.chunk.js",
+    "static/js/3.ab73552d.chunk.js.map": "/static/js/3.ab73552d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0117995d.chunk.css.map": "/static/css/main.0117995d.chunk.css.map",
+    "static/js/2.722576a9.chunk.js.LICENSE.txt": "/static/js/2.722576a9.chunk.js.LICENSE.txt",
+    "static/media/IndieFlower-Regular.9bd64a34.ttf": "/static/media/IndieFlower-Regular.9bd64a34.ttf",
+    "static/media/LibreBaskerville-Italic.0ebc99f3.ttf": "/static/media/LibreBaskerville-Italic.0ebc99f3.ttf",
+    "static/media/Raleway-Regular.9ade142e.ttf": "/static/media/Raleway-Regular.9ade142e.ttf",
+    "static/media/kae.60840060.jpeg": "/static/media/kae.60840060.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.07ec1ac5.js",
+    "static/js/2.722576a9.chunk.js",
+    "static/css/main.0117995d.chunk.css",
+    "static/js/main.d50205c5.chunk.js"
+  ]
+}
