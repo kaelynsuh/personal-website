@@ -1,12 +1,3 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-import Home from './Home';
-import Portfolio from './Portfolio';
-import Contact from './Contact';
-import Footer from './Footer';
-
 import {
   AppBar,
   Button,
@@ -16,11 +7,17 @@ import {
   ListItem,
   Toolbar,
 } from '@material-ui/core';
+import { Link, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
 
-import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-
+import Contact from './Contact';
+import Footer from './Footer';
+import Home from './Home';
+import MenuIcon from '@material-ui/icons/Menu';
+import Portfolio from './Portfolio';
 import logo from '../lib/assets/images/logo.png';
+import styled from 'styled-components';
 
 const Logo = styled.img`
   width: 40px;
@@ -77,68 +74,61 @@ const Navbar = () => {
 
   return (
     <>
-      <Router>
-        <AppBar position="static" style={{ boxShadow: 'none' }}>
-          <StyledContainer maxWidth="md">
-            <StyledToolbar>
-              <StyledMenu onClick={() => setShowMenu(true)}>
-                <MenuIcon />
-              </StyledMenu>
-              <Drawer
-                anchor="top"
-                open={showMenu}
-                onClose={() => setShowMenu(false)}
-              >
-                <StyledList>
-                  <ListItem button onClick={() => setShowMenu(false)}>
-                    <CloseIcon />
-                  </ListItem>
-                  <StyledLink to="/" onClick={() => setShowMenu(false)}>
-                    <ListItem button>Home</ListItem>
-                  </StyledLink>
-                  <StyledLink
-                    to="/portfolio"
-                    onClick={() => setShowMenu(false)}
-                  >
-                    <ListItem button>Portfolio</ListItem>
-                  </StyledLink>
-                </StyledList>
-              </Drawer>
+      <AppBar position="static" style={{ boxShadow: 'none' }}>
+        <StyledContainer maxWidth="md">
+          <StyledToolbar>
+            <StyledMenu onClick={() => setShowMenu(true)}>
+              <MenuIcon />
+            </StyledMenu>
+            <Drawer
+              anchor="top"
+              open={showMenu}
+              onClose={() => setShowMenu(false)}
+            >
+              <StyledList>
+                <ListItem button onClick={() => setShowMenu(false)}>
+                  <CloseIcon />
+                </ListItem>
+                <StyledLink to="/" onClick={() => setShowMenu(false)}>
+                  <ListItem button>Home</ListItem>
+                </StyledLink>
+                <StyledLink to="/portfolio" onClick={() => setShowMenu(false)}>
+                  <ListItem button>Portfolio</ListItem>
+                </StyledLink>
+              </StyledList>
+            </Drawer>
 
-              <Button edge="start" color="inherit" aria-label="menu" href="/">
-                <Logo src={logo} alt="logo" />
-              </Button>
+            <Button edge="start" color="inherit" aria-label="menu" href="/">
+              <Logo src={logo} alt="logo" />
+            </Button>
 
-              <StyledMenuItems color="inherit" href="/">
-                Home
-              </StyledMenuItems>
-              <StyledMenuItems color="inherit" href="/portfolio">
-                Portfolio
-              </StyledMenuItems>
+            <StyledMenuItems color="inherit" href="/">
+              Home
+            </StyledMenuItems>
+            <StyledMenuItems color="inherit" href="/portfolio">
+              Portfolio
+            </StyledMenuItems>
 
-              {/* revisit: new page for contact me */}
-              <StyledMenuItems color="inherit" href="/contact">
-                Contact
-              </StyledMenuItems>
-            </StyledToolbar>
-          </StyledContainer>
-        </AppBar>
+            {/* revisit: new page for contact me */}
+            <StyledMenuItems color="inherit" href="/contact">
+              Contact
+            </StyledMenuItems>
+          </StyledToolbar>
+        </StyledContainer>
+      </AppBar>
 
-        <Switch>
-          <Route path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route path="/contact">
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
+        <Route
+          path="/contact"
+          element={
             <ContactContainer maxWidth="md">
               <Contact />
             </ContactContainer>
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-
+          }
+        ></Route>
+      </Routes>
       <Footer />
     </>
   );
