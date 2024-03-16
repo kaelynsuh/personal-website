@@ -1,18 +1,21 @@
-import React from 'react';
 import './App.css';
-import Container from './views/Container';
 
-import { ThemeProvider } from 'styled-components';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { Route, Routes } from 'react-router-dom';
 
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-
+import Contact from './views/Contact';
 // import '@fontsource/roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-import RalewayWoff2 from './lib/assets/fonts/Raleway-Regular.ttf';
+import Footer from './views/Footer';
+import Home from './views/Home';
+import IndieFlower from './lib/assets/fonts/IndieFlower-Regular.ttf';
 // import LibreBaskerville from './lib/assets/fonts/LibreBaskerville-Regular.ttf';
 import LibreBaskervilleItalic from './lib/assets/fonts/LibreBaskerville-Italic.ttf';
-import IndieFlower from './lib/assets/fonts/IndieFlower-Regular.ttf';
+import Navbar from './views/Navbar';
+import Portfolio from './views/Portfolio';
+import RalewayWoff2 from './lib/assets/fonts/Raleway-Regular.ttf';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 const raleway = {
   fontFamily: 'Raleway',
@@ -112,12 +115,25 @@ const theme = createMuiTheme({
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Container />
-      </ThemeProvider>
-    </MuiThemeProvider>
+    <>
+      <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <>
+            <Navbar />
+
+            <Routes>
+              <Route path="/home" element={<Home />}></Route>
+              <Route path="/portfolio" element={<Portfolio />}></Route>
+              <Route path="/contact" element={<Contact />}></Route>
+              <Route path="/" element={<Home />}></Route>
+            </Routes>
+
+            <Footer />
+          </>
+        </ThemeProvider>
+      </MuiThemeProvider>
+    </>
   );
 };
 

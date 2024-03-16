@@ -7,15 +7,11 @@ import {
   ListItem,
   Toolbar,
 } from '@material-ui/core';
-import { Link, Route, Routes } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import CloseIcon from '@material-ui/icons/Close';
-import Contact from './Contact';
-import Footer from './Footer';
-import Home from './Home';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
-import Portfolio from './Portfolio';
 import logo from '../lib/assets/images/logo.png';
 import styled from 'styled-components';
 
@@ -105,6 +101,7 @@ const Navbar = () => {
             <StyledMenuItems color="inherit" href="/">
               Home
             </StyledMenuItems>
+
             <StyledMenuItems color="inherit" href="/portfolio">
               Portfolio
             </StyledMenuItems>
@@ -116,20 +113,6 @@ const Navbar = () => {
           </StyledToolbar>
         </StyledContainer>
       </AppBar>
-
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/portfolio" element={<Portfolio />}></Route>
-        <Route
-          path="/contact"
-          element={
-            <ContactContainer maxWidth="md">
-              <Contact />
-            </ContactContainer>
-          }
-        ></Route>
-      </Routes>
-      <Footer />
     </>
   );
 };
